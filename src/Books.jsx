@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import useQuery from "./api/useQuery";
 
 export default function Books() {
@@ -18,8 +19,12 @@ export default function Books() {
 function Book({ book }) {
   return (
     <li>
-      <img src={book.coverimage} alt={book.title} />
-      <h2>{book.title}</h2>
+      <Link to={`/books/${book.id}`}>
+        <img src={book.coverimage} alt={book.title} />
+      </Link>
+      <Link to={`/books/${book.id}`}>
+        <h2>{book.title}</h2>
+      </Link>
       <p>{book.author}</p>
       <p>{book.description}</p>
     </li>
