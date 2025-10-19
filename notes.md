@@ -4,6 +4,7 @@ Page Layout
 
 /, /books - list of all books in catalog (Main page)
 
+- get books from API and map them onto an array that displays the list of books
 - each book links to its individual page
 - search bar to .find a particular book
 - - new array to display
