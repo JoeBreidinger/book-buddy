@@ -1,7 +1,10 @@
+import { useParams } from "react-router";
 import useQuery from "./api/useQuery";
 
 export default function BookDetails() {
-  const { data: book, loading, error } = useQuery("/books/1", "book");
+  const { id } = useParams();
+
+  const { data: book, loading, error } = useQuery(`/books/${id}`, "book");
 
   if (loading || !book) return <p>Loading...</p>;
   if (error) return <p>Sorry! {error}</p>;
