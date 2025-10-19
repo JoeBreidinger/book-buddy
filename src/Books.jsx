@@ -1,20 +1,11 @@
+import useQuery from "./api/useQuery";
+
 export default function Books() {
-  const books = [
-    {
-      id: 1,
-      title: "Do",
-      author: "Re",
-      description: "Mi",
-      coverimage: "/books.png",
-    },
-    {
-      id: 2,
-      title: "Fa",
-      author: "So",
-      description: "La",
-      coverimage: "/books.png",
-    },
-  ];
+  const { data: books, loading, error } = useQuery("/books", "books");
+
+  if (loading || !books) return <p>Loading...</p>;
+  if (error) return <p>Sorry! {error}</p>;
+
   return (
     <ul>
       {books.map((book) => (
