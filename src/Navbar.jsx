@@ -13,9 +13,12 @@ export default function Navbar() {
       <nav>
         <NavLink to="/books">Books</NavLink>
         {token ? (
-          <a href="#" onClick={logout}>
-            Log Out
-          </a>
+          <>
+            <NavLink to="/account">Account</NavLink>
+            <a href="#" onClick={logout}>
+              Log Out
+            </a>
+          </>
         ) : (
           <NavLink to="/login">Login</NavLink>
         )}
