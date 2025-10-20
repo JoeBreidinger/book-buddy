@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { useAuth } from "./auth/AuthContext";
 import useQuery from "./api/useQuery";
 import useMutation from "./api/useMutation";
@@ -7,6 +7,7 @@ export default function BookDetails() {
   const { token } = useAuth();
 
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const { data: book, loading, error } = useQuery(`/books/${id}`, "book");
 
@@ -15,8 +16,9 @@ export default function BookDetails() {
     "book",
   ]);
 
-  const reserveBook = () => {
-    reserve({ bookId: id });
+  const reserveBook = async () => {
+    const success = await reserve({ bookId: id });
+    if (success) navigate("/account");
   };
 
   if (loading || !book) return <p>Loading...</p>;

@@ -14,7 +14,7 @@ export default function Reservations({ reservations }) {
       ) : (
         <p>
           You do not currently have any reservations. See our{" "}
-          <Link to="/books">collection!</Link>
+          <Link to="/books">collection</Link>!
         </p>
       )}
     </>
