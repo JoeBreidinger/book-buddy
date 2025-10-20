@@ -14,6 +14,14 @@ Page Layout
 - if the user is logged in, show a "Reserve" button for the user to check out this book
 - if the book is already reserved, the button should be disabled
 
+- if logged in:
+- - show reserve button
+- - - as long as the book is available:true
+- - - button is disabled if booked is already checked out
+
+- if logged out:
+- - no button shown
+
 /account - profile page
 
 - if the user is not logged in, show them a link to register or log in
