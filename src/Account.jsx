@@ -1,4 +1,5 @@
 import useQuery from "./api/useQuery";
+import Reservations from "./Reservations";
 
 export default function Account() {
   const { data: account, loading, error } = useQuery("/users/me");
@@ -12,6 +13,7 @@ export default function Account() {
         Welcome, {account.firstname} {account.lastname}
       </h1>
       <p>Your email on file is: {account.email}</p>
+      <Reservations reservations={account.reservations} />
     </article>
   );
 }
