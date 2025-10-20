@@ -2,7 +2,7 @@ import useQuery from "./api/useQuery";
 import Reservations from "./Reservations";
 
 export default function Account() {
-  const { data: account, loading, error } = useQuery("/users/me");
+  const { data: account, loading, error } = useQuery("/users/me", "account");
 
   if (loading || !account) return <p>Loading...</p>;
   if (error) return <p>Sorry! {error}</p>;
