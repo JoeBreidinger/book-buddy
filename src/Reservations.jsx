@@ -28,7 +28,7 @@ function Reservation({ reservation }) {
     ["account"]
   );
   return (
-    <li key={reservation.id}>
+    <li className="reservation" key={reservation.id}>
       <Link to={`/books/${reservation.bookid}`}>{reservation.title}</Link>
       <p>{reservation.author}</p>
       <button onClick={() => returnBook()}>Return this book</button>

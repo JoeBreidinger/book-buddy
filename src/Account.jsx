@@ -8,7 +8,7 @@ export default function Account() {
   if (error) return <p>Sorry! {error}</p>;
 
   return (
-    <article>
+    <article className="accountDashboard">
       <h1>
         Welcome, {account.firstname} {account.lastname}
       </h1>
