@@ -28,20 +28,22 @@ export default function Login() {
   // The login form
   return (
     <>
-      <h1>Login to your account</h1>
-      <form action={tryLogin}>
-        <label>
-          Email
-          <input type="email" name="email" required />
-        </label>
-        <label>
-          Password
-          <input type="password" name="password" required />
-        </label>
-        <button>Login</button>
-        {error && <p role="alert">{error}</p>}
-      </form>
-      <Link to="/register">Need an account? Register here!</Link>
+      <p className="loginPanel">
+        <h1>Login to your account</h1>
+        <form action={tryLogin}>
+          <label>
+            Email
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Password
+            <input type="password" name="password" required />
+          </label>
+          <button>Login</button>
+          {error && <p role="alert">{error}</p>}
+        </form>
+        <Link to="/register">Need an account? Register here!</Link>
+      </p>
     </>
   );
 }

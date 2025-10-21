@@ -30,28 +30,30 @@ export default function Register() {
   // The Register form
   return (
     <>
-      <h1>Register for an account</h1>
-      <form action={tryRegister}>
-        <label>
-          First Name
-          <input type="text" name="firstname" />
-        </label>
-        <label>
-          Last Name
-          <input type="text" name="lastname" />
-        </label>
-        <label>
-          Email
-          <input type="email" name="email" required />
-        </label>
-        <label>
-          Password
-          <input type="password" name="password" required />
-        </label>
-        <button>Register</button>
-        {error && <p role="alert">{error}</p>}
-      </form>
-      <Link to="/login">Already have an account? Log in here.</Link>
+      <p className="registerPanel">
+        <h1>Register for an account</h1>
+        <form action={tryRegister}>
+          <label>
+            First Name
+            <input type="text" name="firstname" />
+          </label>
+          <label>
+            Last Name
+            <input type="text" name="lastname" />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Password
+            <input type="password" name="password" required />
+          </label>
+          <button>Register</button>
+          {error && <p role="alert">{error}</p>}
+        </form>
+        <Link to="/login">Already have an account? Log in here.</Link>
+      </p>
     </>
   );
 }

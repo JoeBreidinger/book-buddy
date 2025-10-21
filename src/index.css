@@ -1,3 +1,109 @@
+body {
+  background-color: burlywood;
+  padding: 0 0;
+  margin: 0 0;
+}
 img {
   width: 5em;
+}
+
+/* --------- */
+/*  NAVBAR   */
+/* --------- */
+.navLogo {
+  display: flex;
+  text-decoration: none;
+}
+.smallLogo {
+  width: 2em;
+  padding: 0.5em;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1ch;
+  align-items: center;
+  padding: 0.25rem 0;
+  margin: 0.5rem;
+  border-bottom: 2px solid darkred;
+}
+.navLinks {
+  display: flex;
+}
+.navLinks a {
+  padding: 0.5rem;
+  text-decoration: none;
+}
+
+/* --------- */
+/* MAIN PAGE */
+/* --------- */
+
+.catalog {
+  color: darkred;
+}
+.searchBar {
+  display: grid;
+  gap: 0.25rem;
+  grid-template-columns: 1fr 12ch;
+  margin: 0.25rem;
+}
+#root {
+  max-width: 60%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.books {
+  display: grid;
+  gap: 0.25rem;
+}
+.bookList {
+  display: grid;
+  list-style: none;
+  gap: 1rem;
+}
+li.book {
+  display: grid;
+  grid-template-columns: 10ch 1fr;
+  gap: 1ch;
+  background: beige;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.bookPanel:hover {
+  transform: scale(1.025);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+/* --------- */
+/*   LOGIN   */
+/* --------- */
+
+.loginPanel {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0;
+  padding: 1rem;
+  gap: 1rem;
+}
+.loginPanel > * {
+  padding: 0.25rem;
+}
+
+/* --------- */
+/* REGISTER */
+/* --------- */
+
+.registerPanel {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0;
+  padding: 1rem;
+  gap: 1rem;
+}
+.registerPanel form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: ;
 }

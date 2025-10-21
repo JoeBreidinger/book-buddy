@@ -21,12 +21,14 @@ export default function Books() {
 
   return (
     <>
-      <h1>Catalog</h1>
-      <form action={updateSearchTerm}>
-        <input type="text" name="search" aria-label="search" />
-        <button>Search</button>
-      </form>
-      <ul>
+      <div>
+        <h1 className="catalog">Catalog</h1>
+        <form action={updateSearchTerm} className="searchBar">
+          <input type="text" name="search" aria-label="search" />
+          <button>Search</button>
+        </form>
+      </div>
+      <ul className="bookList">
         {filteredBooks.map((book) => (
           <Book book={book} key={book.id} />
         ))}
@@ -37,15 +39,17 @@ export default function Books() {
 
 function Book({ book }) {
   return (
-    <li>
-      <Link to={`/books/${book.id}`}>
-        <img src={book.coverimage} alt={book.title} />
-      </Link>
-      <Link to={`/books/${book.id}`}>
-        <h2>{book.title}</h2>
-      </Link>
-      <p>{book.author}</p>
-      <p>{book.description}</p>
-    </li>
+    <div className="bookPanel">
+      <li className="book">
+        <Link to={`/books/${book.id}`}>
+          <img src={book.coverimage} alt={book.title} />
+        </Link>
+        <Link to={`/books/${book.id}`}>
+          <h2>{book.title}</h2>
+        </Link>
+        <p>{book.author}</p>
+        <p>{book.description}</p>
+      </li>
+    </div>
   );
 }
